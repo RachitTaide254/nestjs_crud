@@ -23,19 +23,18 @@ export class AuthService {
     }
   }
 
-  async allUsers():Promise<User[]>{
+  async allUsers(): Promise<User[]> {
     try {
       const userExist = await this.userModel.find({});
       if (userExist == null) {
         throw new ForbiddenException('No User');
       } else {
-        return userExist
+        return userExist;
       }
     } catch (e) {
       return e.response;
     }
   }
-
 
   async signin(user: User): Promise<User> {
     try {
@@ -49,7 +48,6 @@ export class AuthService {
       return e.response;
     }
   }
-
 
   async deleteUser(user: User): Promise<User> {
     try {
