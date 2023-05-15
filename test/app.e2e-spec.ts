@@ -42,10 +42,10 @@ describe('AppController (e2e)', () => {
       .expect(200);
   });
 
-  // it('should delete user', () => {
-  //   return request(app.getHttpServer()).delete('/user/delete').send({
-  //     email: 'phik@gmail.com',
-  //   });
-  //   //.expect(200);
-  // });
+  it('should delete user', () => {
+    return request(app.getHttpServer()).delete('/user/delete').send({
+      email: 'phik@gmail.com',
+    })
+    .expect(204);
+  });
 });
